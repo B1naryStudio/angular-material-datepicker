@@ -273,6 +273,17 @@ input.chipsInput:focus {
 	background: #ccc;
 }
 
+.chips-button-trigger {
+	cursor: pointer;
+	font-size: 16px;
+	text-align: center;
+}
+
+.chips-button-trigger .chips-item-wrapper {
+	color: #00B8D4;
+	line-height: 72px;
+}
+
 .active {
 	background: #e8e8e8;
 }

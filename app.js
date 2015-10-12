@@ -31,4 +31,8 @@ angular.module('mdChipsDemo', ['mdChips'])
 		}];
 
 		$scope.selectedUsers = [];
+
+		$scope.buttonFunc = function () {
+			alert('Event from controller was fired!');
+		}
 	});
