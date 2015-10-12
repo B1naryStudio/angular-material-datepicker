@@ -55,7 +55,9 @@ angular.module('mdChips', [])
 				mdItem: '@',
 				mdTitle: '@',
 				mdThumbnail: '@',
-				mdSubtitle: '@'
+				mdSubtitle: '@',
+				mdButton: '@',
+				mdButtonEvent: '&'
 			},
 			link: function (scope, element, attrs) {
 				scope.ytop = '10px';
@@ -96,6 +98,12 @@ angular.module('mdChips', [])
 																</div> \
 															</div> \
 														</div>");
+							var newButton = angular.element("<div class='chips-list-item chips-button-trigger' ng-click='buttonCallback()'> \
+																<div class='chips-item-wrapper'>{{mdButton}}</div> \
+															</div>");
+							if(scope.mdButton){
+								list.append(newButton);
+							}
 							$compile(list)(scope);	
 							$timeout(function() {
 								self.removeList();
@@ -281,6 +289,10 @@ angular.module('mdChips', [])
 					this.ngModel[index][scope.mdSubtitle]  = email;
 					this.ngModel[index][scope.mdItem][i][scope.mdSubtitle] = old.subtitle;
 					this.ngModel[index][scope.mdItem][i][scope.mdThumbnail] = old.url;
+				};
+
+				scope.buttonCallback = function(){
+					scope.mdButtonEvent();
 				};
 
 
